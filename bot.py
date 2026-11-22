@@ -3,10 +3,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 from supabase import create_client, Client
 
-SUPABASE_URL = os.getenv("https://dlebzfhvrokhkmpqqjuy.supabase.co")
-SUPABASE_SECRET = os.getenv("sb_secret_bRxVF2fQlvSo7PjCKFO_Gg_7l98OI9m")
-BOT_TOKEN = os.getenv("9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc")
-OWNER_ID = int(os.getenv("7777899827", "0"))
+SUPABASE_URL = "https://dlebzfhvrokhkmpqqjuy.supabase.co"
+SUPABASE_SECRET = "sb_secret_bRXf2fQlvS07pKCfQ_Gg79810I9m"
+BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
+OWNER_ID = "7777899827"
 
 sb: Client = create_client(SUPABASE_URL, SUPABASE_SECRET)
 
