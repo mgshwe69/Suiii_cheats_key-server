@@ -1,14 +1,33 @@
 import os, secrets, datetime
+import threading
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 from supabase import create_client, Client
 
+# ==========================================
+# YAHAN APNI ASLI KEYS DAAL (Quotes "" hatana mat)
+# ==========================================
 SUPABASE_URL = "https://dlebzfhvrokhkmpqqjuy.supabase.co"
-SUPABASE_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZWJ6Zmh2cm9raGttcHFxanV5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5NTMzODI1MiwiZXhwIjoyMTEwOTE0MjUyfQ.Wkg7LmSw4UAHyfSmliz3_MDkmq3JSw2wuOcwsldnyNc..." #
+SUPABASE_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZWJ6Zmh2cm9raGttcHFxanV5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5NTMzODI1MiwiZXhwIjoyMTEwOTE0MjUyfQ.Wkg7LmSw4UAHyfSmliz3_MDkmq3JSw2wuOcwsldnyNc" 
 BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
-OWNER_ID = "7777899827"
+OWNER_ID = 7777899827  # Yahan apna asli Telegram ID daalna (bina quotes ke)
+# ==========================================
 
 sb: Client = create_client(SUPABASE_URL, SUPABASE_SECRET)
+
+# --- DUMMY WEB SERVER (Render Free Tier ke liye zaroori) ---
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running!")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(('0.0.0.0', port), DummyHandler)
+    server.serve_forever()
+# -----------------------------------------------------------
 
 def gen_key():
     return "SUIII-" + secrets.token_hex(4).upper()
@@ -158,6 +177,9 @@ async def callback_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         await q.edit_message_text(f"🗑 Key `{key}` deleted.", parse_mode="Markdown")
 
 def main():
+    # Render Web Service ke liye dummy server start karna
+    threading.Thread(target=run_dummy_server, daemon=True).start()
+    
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("approve", approve))
