@@ -4,7 +4,8 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 from supabase import create_client, Client
 
 SUPABASE_URL = "https://dlebzfhvrokhkmpqqjuy.supabase.co"
-SUPABASE_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." # (sb_publishable_bnY0Sqc7MBkuhXkwic-2Zw_FcmwWwlW)
+SUPABASE_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." # 
+(sb_publishable_bnY0Sqc7MBkuhXkwic-2Zw_FcmwWwlW)
 BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
 OWNER_ID = "7777899827"
 
