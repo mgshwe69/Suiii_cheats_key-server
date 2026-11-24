@@ -9,7 +9,7 @@ from supabase import create_client, Client
 # YAHAN APNI ASLI KEYS DAAL (Quotes "" hatana mat)
 # ==========================================
 SUPABASE_URL = "https://dlebzfhvrokhkmpqqjuy.supabase.co"
-SUPABASE_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZWJ6Zmh2cm9raGttcHFxanV5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5NTMzODI1MiwiZXhwIjoyMTEwOTE0MjUyfQ.Wkg7LmSw4UAHyfSmliz3_MDkmq3JSw2wuOcwsldnyNc" 
+SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRsZWJ6Zmh2cm9raGttcHFxanV5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5NTMzODI1MiwiZXhwIjoyMTEwOTE0MjUyfQ.Wkg7LmSw4UAHyfSmliz3_MDkmq3JSw2wuOcwsldnyNc" 
 BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
 OWNER_ID = 7777899827  # Yahan apna asli Telegram ID daalna (bina quotes ke)
 # ==========================================
