@@ -26,7 +26,7 @@ from telegram.ext import (
 
 BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
 OWNER_ID = 7777899827
-WORKER_URL = "suiiicheatskey.sultanreew.workers.dev"
+WORKER_URL = "https://suiiicheatskey.sultanreew.workers.dev"
 ADMIN_SECRET = "SUIII_Admin_7xK9pQ2mV8nL4wR6tY3aB5cD"
 
 logging.basicConfig(
