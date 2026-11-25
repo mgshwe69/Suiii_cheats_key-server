@@ -24,7 +24,7 @@ from telegram.ext import (
 # CONFIGURATION - Railway Environment Variables
 # ==========================================
 
-BOT_TOKEN = os.environ["9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"]
+BOT_TOKEN = "9072241056:AAGsw9jTjnYpsE1ljkjfqpMQjzzAz8XKaOc"
 OWNER_ID = int(os.environ["7777899827"])
 WORKER_URL = os.environ["suiiicheatskey.sultanreew.workers.dev/"].rstrip("/")
 ADMIN_SECRET = os.environ["SUIII_Admin_7xK9pQ2mV8nL4wR6tY3aB5cD"]
